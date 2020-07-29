@@ -1,30 +1,23 @@
-#ifndef FRAGTRAP_HPP 
-# define FRAGTRAP_HPP
-
+#ifndef SCAVTRAP_HPP 
+# define SCAVTRAP_HPP
 # include <iostream>
 # include <string.h>
-# include <time.h>
 
-# define VAULT_HUNTER_COST 25
-
-class FragTrap 
+class ScavTrap
 {
 	public:
-		FragTrap(std::string name);
-		~FragTrap(void);
-		FragTrap(FragTrap const &other);
+		ScavTrap(std::string name);
+		~ScavTrap(void);
+		ScavTrap(ScavTrap const &other);
 
-		FragTrap		&operator=(FragTrap const &other);
+		ScavTrap		&operator=(ScavTrap const &other);
 
 		void			showStatus(void) const;
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
 		void			rangedAttack(std::string const &target);
 		void			meleeAttack(std::string const &target);
-		void			stunningAttack(std::string const &target);
-		void			viciousAttack(std::string const &target);
-		void			rocketAttack(std::string const &target);
-		void			vaulthunter_dot_exe(std::string const &target);
+		void			challengeNewcomer(std::string const &target) const;
 	private:
 		std::string		_name;
 		unsigned int	_level;
@@ -36,7 +29,5 @@ class FragTrap
 		unsigned int	_rangedAttackDamage;
 		unsigned int	_armorDamageReduction;
 };
-
-typedef void	(FragTrap::*attack)(std::string const &);
 
 #endif
