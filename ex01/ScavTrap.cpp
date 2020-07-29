@@ -72,3 +72,30 @@ void			ScavTrap::meleeAttack(std::string const &target)
 	std::cout << "ScavTrap " << _name <<  " attacks " << target << " at melee, causing "
 				<< _meleeAttackDamage << " points of damage!" << std::endl;
 }
+
+
+void			ScavTrap::bananaChallenge(std::string const &target)
+{
+	std::cout << "ScavTrap " << _name << " challenge " << target << " to swallow a banana." << std::endl;
+}
+
+void			ScavTrap::hotChallenge(std::string const &target)
+{
+	std::cout << "ScavTrap " << _name << " challenge " << target << " to eat chilli pepper." << std::endl;
+}
+
+void			ScavTrap::chamallowChallenge(std::string const &target)
+{
+	std::cout << "ScavTrap " << _name << " challenge " << target << " to eat 100 chamallow." << std::endl;
+}
+
+void			ScavTrap::challengeNewcomer(std::string const &target)
+{
+	challenge		challenges[3] = {
+		&ScavTrap::bananaChallenge,
+		&ScavTrap::hotChallenge,
+		&ScavTrap::chamallowChallenge
+	};
+	std::cout << "Hello " << target << " you need to do a challenge to enter." << std::endl;
+	(this->*(challenges[rand() % 3]))(target);
+}

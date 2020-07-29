@@ -92,7 +92,7 @@ void			FragTrap::rocketAttack(std::string const &target)
 
 void			FragTrap::vaulthunter_dot_exe(std::string const &target)
 {
-	attack	tab[5] = {
+	attack	attacks[5] = {
 		&FragTrap::rangedAttack,
 		&FragTrap::meleeAttack,
 		&FragTrap::stunningAttack,
@@ -106,6 +106,6 @@ void			FragTrap::vaulthunter_dot_exe(std::string const &target)
 	{
 		std::cout << "vaulthunter_dot_exe on " << target << std::endl;
 		_energyPoints -= VAULT_HUNTER_COST;
-		(this->*(tab[rand() % 5]))(target);
+		(this->*(attacks[rand() % 5]))(target);
 	}
 }

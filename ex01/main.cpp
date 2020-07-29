@@ -31,6 +31,8 @@ int		main(void)
 	paul.beRepaired(10000);
 	paul.showStatus();
 	std::cout << std::endl << "TEST DES CHALLENGES" << std::endl;
-
+	paul.challengeNewcomer("Xavier");
+	paul.challengeNewcomer("Michel");
+	paul.challengeNewcomer("Roger");
 	return (0);
 }

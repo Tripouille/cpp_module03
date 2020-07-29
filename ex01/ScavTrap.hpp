@@ -2,6 +2,7 @@
 # define SCAVTRAP_HPP
 # include <iostream>
 # include <string.h>
+# include <time.h>
 
 class ScavTrap
 {
@@ -17,7 +18,11 @@ class ScavTrap
 		void			beRepaired(unsigned int amount);
 		void			rangedAttack(std::string const &target);
 		void			meleeAttack(std::string const &target);
-		void			challengeNewcomer(std::string const &target) const;
+		void			challengeNewcomer(std::string const &target);
+		void			bananaChallenge(std::string const &target);
+		void			hotChallenge(std::string const &target);
+		void			chamallowChallenge(std::string const &target);
+
 	private:
 		std::string		_name;
 		unsigned int	_level;
@@ -29,5 +34,7 @@ class ScavTrap
 		unsigned int	_rangedAttackDamage;
 		unsigned int	_armorDamageReduction;
 };
+
+typedef void	(ScavTrap::*challenge)(std::string const &);
 
 #endif

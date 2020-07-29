@@ -25,6 +25,7 @@ class FragTrap
 		void			viciousAttack(std::string const &target);
 		void			rocketAttack(std::string const &target);
 		void			vaulthunter_dot_exe(std::string const &target);
+
 	private:
 		std::string		_name;
 		unsigned int	_level;
