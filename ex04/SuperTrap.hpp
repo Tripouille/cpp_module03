@@ -9,7 +9,7 @@ class SuperTrap : public FragTrap, public NinjaTrap
 {
 	public:
 		SuperTrap(std::string name);
-		~SuperTrap(void);
+		virtual ~SuperTrap(void);
 		SuperTrap(SuperTrap const &other);
 
 		SuperTrap		&operator=(SuperTrap const &other);

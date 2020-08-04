@@ -10,7 +10,7 @@ class NinjaTrap : virtual public ClapTrap
 {
 	public:
 		NinjaTrap(std::string name);
-		~NinjaTrap(void);
+		virtual ~NinjaTrap(void);
 		NinjaTrap(NinjaTrap const &other);
 
 		NinjaTrap		&operator=(NinjaTrap const &other);
