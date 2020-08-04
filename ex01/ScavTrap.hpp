@@ -24,6 +24,8 @@ class ScavTrap
 		void			chamallowChallenge(std::string const &target);
 
 	private:
+		ScavTrap(void);
+
 		std::string		_name;
 		unsigned int	_level;
 		unsigned int	_hitPoints;

@@ -27,6 +27,8 @@ class FragTrap
 		void			vaulthunter_dot_exe(std::string const &target);
 
 	private:
+		FragTrap(void);
+
 		std::string		_name;
 		unsigned int	_level;
 		unsigned int	_hitPoints;

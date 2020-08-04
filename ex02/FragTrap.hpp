@@ -23,6 +23,8 @@ class FragTrap : public ClapTrap
 		void			vaulthunter_dot_exe(std::string const &target);
 
 	private:
+		FragTrap(void);
+
 		void			copy(FragTrap const &other);
 };
 

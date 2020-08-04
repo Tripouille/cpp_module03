@@ -10,7 +10,7 @@ class ClapTrap
 		ClapTrap(std::string name, u_int level, u_int hitPoints, u_int maxHitPoints,
 				u_int energyPoints, u_int maxEnergyPoints, u_int meleeAttackDamage,
 				u_int rangedAttackDamage, u_int armorDamageReduction);
-		~ClapTrap(void);
+		virtual ~ClapTrap(void);
 		ClapTrap(ClapTrap const &other);
 
 		ClapTrap		&operator=(ClapTrap const &other);
@@ -33,6 +33,8 @@ class ClapTrap
 		u_int			_armorDamageReduction;
 
 	private:
+		ClapTrap(void);
+
 		void			copy(ClapTrap const &other);
 };
 

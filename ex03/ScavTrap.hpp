@@ -22,6 +22,8 @@ class ScavTrap : public ClapTrap
 		void			chamallowChallenge(std::string const &target);
 
 	private:
+		ScavTrap(void);
+
 		void			copy(ScavTrap const &other);
 };
 

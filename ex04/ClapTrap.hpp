@@ -3,7 +3,7 @@
 # include <iostream>
 # include <string.h>
 
-class ClapTrap 
+class ClapTrap
 {
 	public:
 		ClapTrap(std::string name);
@@ -35,7 +35,7 @@ class ClapTrap
 	private:
 		ClapTrap(void);
 
-		void			copy(ClapTrap const &other);
+		void	copy(ClapTrap const &other);
 };
 
 #endif
