@@ -3,8 +3,10 @@
 # include <iostream>
 # include <string.h>
 # include "ClapTrap.hpp"
+# include "FragTrap.hpp"
+# include "ScavTrap.hpp"
 
-class NinjaTrap : ClapTrap
+class NinjaTrap : public ClapTrap
 {
 	public:
 		NinjaTrap(std::string name);
@@ -13,7 +15,13 @@ class NinjaTrap : ClapTrap
 
 		NinjaTrap		&operator=(NinjaTrap const &other);
 
+		void			ninjaShoebox(ClapTrap &target);
+		void			ninjaShoebox(FragTrap &target);
+		void			ninjaShoebox(ScavTrap &target);
+		void			ninjaShoebox(NinjaTrap &target);
+
 	private:
+		void			copy(NinjaTrap const &other);
 };
 
 #endif
