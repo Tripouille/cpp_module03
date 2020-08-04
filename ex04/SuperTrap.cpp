@@ -37,3 +37,13 @@ void			SuperTrap::copy(SuperTrap const &other)
 {
 	std::cout << "(´△`)ﾉ SUPER COPIE DE " << other._name << std::endl;
 }
+
+void			SuperTrap::rangedAttack(std::string const &target)
+{
+	FragTrap::rangedAttack(target);
+}
+
+void			SuperTrap::meleeAttack(std::string const &target)
+{
+	NinjaTrap::meleeAttack(target);
+}
