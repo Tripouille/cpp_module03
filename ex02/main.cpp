@@ -3,10 +3,16 @@
 
 int		main(void)
 {
+	srand(time(nullptr));
 	FragTrap a("a");
+	a.takeDamage(10);
+	a.vaulthunter_dot_exe("dummy");
+	std::cout << "TEST DU CREATEUR PAR COPIE" << std::endl;
 	FragTrap b(a);
 	b.showStatus();
-	/*std::cout << std::endl << "TEST DU FRAGTRAP" << std::endl;
+	a.takeDamage(150);
+	(b = a).showStatus();
+	std::cout << std::endl << "TEST DU FRAGTRAP" << std::endl;
 	FragTrap		bob("bob");
 	bob.showStatus();
 	bob.takeDamage(1);
@@ -38,6 +44,6 @@ int		main(void)
 	std::cout << std::endl << "TEST DES CHALLENGES" << std::endl;
 	paul.challengeNewcomer("Xavier");
 	paul.challengeNewcomer("Michel");
-	paul.challengeNewcomer("Roger");*/
+	paul.challengeNewcomer("Roger");
 	return (0);
 }

@@ -6,6 +6,8 @@ int		main(void)
 	std::cout << std::endl << "TEST DU FRAGTRAP" << std::endl;
 	FragTrap		bob("bob");
 	FragTrap		roger(bob);
+
+	srand(time(nullptr));
 	bob.showStatus();
 	bob.takeDamage(1);
 	bob.takeDamage(10000);

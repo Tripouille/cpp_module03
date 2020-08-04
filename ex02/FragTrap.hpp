@@ -3,9 +3,8 @@
 
 # include <iostream>
 # include <string.h>
-# include <time.h>
+# include <ctime>
 # include "ClapTrap.hpp"
-
 
 # define VAULT_HUNTER_COST 25
 
@@ -22,6 +21,9 @@ class FragTrap : public ClapTrap
 		void			viciousAttack(std::string const &target);
 		void			rocketAttack(std::string const &target);
 		void			vaulthunter_dot_exe(std::string const &target);
+
+	private:
+		void			copy(FragTrap const &other);
 };
 
 typedef void	(FragTrap::*attack)(std::string const &);

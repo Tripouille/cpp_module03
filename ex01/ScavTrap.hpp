@@ -2,7 +2,7 @@
 # define SCAVTRAP_HPP
 # include <iostream>
 # include <string.h>
-# include <time.h>
+# include <ctime>
 
 class ScavTrap
 {

@@ -1,6 +1,18 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : _name(name)
+ClapTrap::ClapTrap(std::string name) : _name(name), _level(1), _hitPoints(1), _maxHitPoints(1),
+						_energyPoints(1), _maxEnergyPoints(1), _meleeAttackDamage(1),
+						_rangedAttackDamage(1), _armorDamageReduction(1)
+{
+	std::cout << "CLAPTRAP constructor" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name, u_int level, u_int hitPoints, u_int maxHitPoints,
+					u_int energyPoints, u_int maxEnergyPoints, u_int meleeAttackDamage,
+					u_int rangedAttackDamage, u_int armorDamageReduction)
+					: _name(name), _level(level), _hitPoints(hitPoints), _maxHitPoints(maxHitPoints),
+					_energyPoints(energyPoints), _maxEnergyPoints(maxEnergyPoints), _meleeAttackDamage(meleeAttackDamage),
+					_rangedAttackDamage(rangedAttackDamage), _armorDamageReduction(armorDamageReduction)
 {
 	std::cout << "CLAPTRAP constructor" << std::endl;
 }
@@ -13,14 +25,20 @@ ClapTrap::~ClapTrap(void)
 ClapTrap::ClapTrap(ClapTrap const &other)
 {
 	std::cout << "CLAPTRAP copy constructor" << std::endl;
-	*this = other;
+	ClapTrap::copy(other);
 }
 
 ClapTrap		&ClapTrap::operator=(ClapTrap const &other)
 {
 	std::cout << "CLAPTRAP assignation." << std::endl;
-	if (this == &other)
-		return (*this);
+	if (this != &other)
+		ClapTrap::copy(other);
+	return (*this);
+}
+
+void			ClapTrap::copy(ClapTrap const &other)
+{
+	std::cout << "CLAPCOPY de " << other._name << std::endl;
 	_hitPoints = other._hitPoints;
 	_maxHitPoints = other._maxHitPoints;
 	_energyPoints = other._energyPoints;
@@ -30,7 +48,6 @@ ClapTrap		&ClapTrap::operator=(ClapTrap const &other)
 	_meleeAttackDamage = other._meleeAttackDamage;
 	_rangedAttackDamage = other._rangedAttackDamage;
 	_armorDamageReduction = other._armorDamageReduction;
-	return (*this);
 }
 
 void			ClapTrap::showStatus(void) const

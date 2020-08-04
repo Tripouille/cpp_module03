@@ -73,7 +73,6 @@ void			ScavTrap::meleeAttack(std::string const &target)
 				<< _meleeAttackDamage << " points of damage!" << std::endl;
 }
 
-
 void			ScavTrap::bananaChallenge(std::string const &target)
 {
 	std::cout << "ScavTrap " << _name << " challenge " << target << " to swallow a banana." << std::endl;

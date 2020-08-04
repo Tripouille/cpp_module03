@@ -3,7 +3,7 @@
 
 # include <iostream>
 # include <string.h>
-# include <time.h>
+# include <ctime>
 
 # define VAULT_HUNTER_COST 25
 

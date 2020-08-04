@@ -57,6 +57,7 @@ void			FragTrap::beRepaired(unsigned int amount)
 {
 	unsigned int	missingHitPoints = _maxHitPoints - _hitPoints;
 	unsigned int	repairedHitPoints = amount > missingHitPoints ? missingHitPoints : amount;
+
 	_hitPoints += repairedHitPoints;
 	std::cout << "FR4G-TP " << _name <<  " repare himself " << repairedHitPoints << " hit points!" << std::endl;	
 }

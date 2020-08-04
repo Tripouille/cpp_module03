@@ -7,6 +7,9 @@ class ClapTrap
 {
 	public:
 		ClapTrap(std::string name);
+		ClapTrap(std::string name, u_int level, u_int hitPoints, u_int maxHitPoints,
+				u_int energyPoints, u_int maxEnergyPoints, u_int meleeAttackDamage,
+				u_int rangedAttackDamage, u_int armorDamageReduction);
 		~ClapTrap(void);
 		ClapTrap(ClapTrap const &other);
 
@@ -20,14 +23,17 @@ class ClapTrap
 
 	protected:
 		std::string		_name;
-		unsigned int	_level;
-		unsigned int	_hitPoints;
-		unsigned int	_maxHitPoints;
-		unsigned int	_energyPoints;
-		unsigned int	_maxEnergyPoints;
-		unsigned int	_meleeAttackDamage;
-		unsigned int	_rangedAttackDamage;
-		unsigned int	_armorDamageReduction;
+		u_int			_level;
+		u_int			_hitPoints;
+		u_int			_maxHitPoints;
+		u_int			_energyPoints;
+		u_int			_maxEnergyPoints;
+		u_int			_meleeAttackDamage;
+		u_int			_rangedAttackDamage;
+		u_int			_armorDamageReduction;
+
+	private:
+		void			copy(ClapTrap const &other);
 };
 
 #endif

@@ -3,7 +3,7 @@
 
 # include <iostream>
 # include <string.h>
-# include <time.h>
+# include <ctime>
 # include "ClapTrap.hpp"
 
 
@@ -20,6 +20,9 @@ class ScavTrap : public ClapTrap
 		void			bananaChallenge(std::string const &target);
 		void			hotChallenge(std::string const &target);
 		void			chamallowChallenge(std::string const &target);
+
+	private:
+		void			copy(ScavTrap const &other);
 };
 
 typedef void	(ScavTrap::*challenge)(std::string const &);

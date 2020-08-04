@@ -5,6 +5,7 @@ int		main(void)
 	FragTrap		bob("bob");
 	FragTrap		roger(bob);
 
+	srand(time(nullptr));
 	bob.showStatus();
 	bob.takeDamage(1);
 	bob.takeDamage(10000);

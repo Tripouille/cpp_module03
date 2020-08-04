@@ -1,15 +1,7 @@
 #include "ScavTrap.hpp" 
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 1, 100, 100, 50, 50, 20, 15, 3)
 {
-	_level = 1;
-	_hitPoints = 100;
-	_maxHitPoints = 100;
-	_energyPoints = 50;
-	_maxEnergyPoints = 50;
-	_meleeAttackDamage = 20;
-	_rangedAttackDamage = 15;
-	_armorDamageReduction = 3;
 	std::cout << "Séquence d'initiation terminée. Bonjour, je suis votre nouveau robot ScavTrap. Nom : "
 	<< _name << ". Robot d'Hyperion classe C--" << std::endl;
 }
@@ -22,17 +14,23 @@ ScavTrap::~ScavTrap(void)
 ScavTrap::ScavTrap(ScavTrap const &other) : ClapTrap(other)
 {
 	std::cout << "Lancement de la Scav copie" << std::endl;
-	*this = other;
+	ScavTrap::copy(other);
 }
 
 ScavTrap		&ScavTrap::operator=(ScavTrap const &other)
 {
 	std::cout << "ScavScan de " << other._name << std::endl;
-	if (this == &other)
-		return (*this);
-	ClapTrap::operator=(other);
-	std::cout << "Copie réussie" << std::endl;
+	if (this != &other)
+	{
+		ClapTrap::operator=(other);
+		ScavTrap::copy(other);
+	}
 	return (*this);
+}
+
+void			ScavTrap::copy(ScavTrap const &other)
+{
+	std::cout << "SCAVCOPY de " << other._name << std::endl;
 }
 
 void			ScavTrap::bananaChallenge(std::string const &target)
